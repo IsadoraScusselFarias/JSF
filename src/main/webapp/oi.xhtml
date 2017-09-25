@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Primeira Tela</title>
+	<style>
+		.divisinha{
+			color:white;
+			width: 200px;
+			height: 50px;
+			text-align:center;
+			padding:20px;
+			background-color:#262626;
+			margin:auto;
+		}
+		.meio{
+			padding:20px;
+			widht:100px;
+		}
+		body{
+			background-color:lightgray;
+		}
+	</style>
+</h:head>
+
+<h:body>
+	<div class="divisinha">
+		<i>Olá Galeraaa</i>
+		<strong>Brendinha safadinha</strong>
+	</div>
+	<h:form>
+		<div class="meio"><h:inputText name="primeiroCampo" id="priemiroCampo"
+			value="Olá Mundo!" /></div>
+		<div class="meio"><h:commandButton name="btnPrimeiro" id="btnPrimeiro"
+			value="primeiro botao" /></div>
+		<div class="meio"><h:inputTextarea name="txtArea" id="txtArea" cols="20" rows="10" /></div>
+		
+		<div>
+			<h:commandButton name="btnAlfredo" value="Mostre-me mais dados" id="btnAlfredo" action="#{alfredoController.exibirDadosAlfredo()}"></h:commandButton>
+			<div>
+				<h:outputLabel value="Nome: #{alfredoController.nome}"/>
+			</div>
+			<div>
+				<h:outputLabel value="Idade: #{alfredoController.idade}"/>
+			</div>
+		</div>
+		
+	</h:form>
+</h:body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Exercicios JSF</title>
+	<style>
+.divisinha {
+	color: white;
+	text-align: center;
+	padding: 20px;
+	background-color: #262626;
+	margin: auto;
+	width: 800px;
+}
+
+.centro {
+	width: 800px;
+	margin: auto;
+}
+.separar{
+	border: 1px solid black;
+	padding:20px;
+}
+.centro div {
+	padding: 5px;
+	margin-bottom: 10px;
+}
+</style>
+</h:head>
+
+<h:body>
+	<div class="divisinha">Exercicios JSF</div>
+	<h:form>
+		<div class="centro">
+			<div class="separar">
+				<h3>Exercício 1</h3>
+				<div>
+					Valor 1:
+					<h:inputText id="v1" value="#{exercicioController.valor1}"></h:inputText>
+				</div>
+				<div>
+					Valor 2:
+					<h:inputText id="v2" value="#{exercicioController.valor2}"></h:inputText>
+				</div>
+				<div>
+					<h:commandButton id="btnSomar" name="btnSomar"
+						action="#{exercicioController.somar()}" value="Somar"></h:commandButton>
+				</div>
+				<div>
+					<h:commandButton id="btnSubtrair" name="btnSubtrair"
+						action="#{exercicioController.subtrair()}" value="Subtrair"></h:commandButton>
+				</div>
+				<div>
+					<h:commandButton id="btnMultiplicar" name="btnMultiplicar"
+						action="#{exercicioController.multiplicar()}" value="Multiplicar"></h:commandButton>
+				</div>
+				<div>
+					<h:commandButton id="btnDividir" name="btnDividir"
+						action="#{exercicioController.dividir()}" value="Dividir"></h:commandButton>
+				</div>
+				<div>
+					<h:outputLabel
+						value="Resultado Final: #{exercicioController.resultado}" />
+				</div>
+			</div>
+
+			<div class="separar">
+				<h3>Exercício 2</h3>
+				<div>
+					Texto:
+					<h:inputText id="texto" value="#{exercicioController.texto}"></h:inputText>
+				</div>
+				<div>
+					<h:commandButton id="btnMaiuscula" name="btnMaiuscula"
+						action="#{exercicioController.grande()}" value="Maiuscula"></h:commandButton>
+				</div>
+				<div>
+					<h:commandButton id="btnMinuscula" name="btnMinuscula"
+						action="#{exercicioController.pequeno()}" value="Minuscula"></h:commandButton>
+				</div>
+				<div>
+					<h:outputLabel value="Texto Final: #{exercicioController.texto}" />
+				</div>
+			</div>
+
+			<div class="separar">
+				<h3>Exercício 3</h3>
+				<div>
+					<h:selectBooleanCheckbox value = "Remember Me" id = "chkRememberMe" /> 
+				</div>
+			</div>
+
+			<div class="separar">
+				<h3>Exercício 4</h3>
+				<div>
+					ComboBox:
+					<h:selectManyListbox value="#{exercicioController.lista}">
+						<f:selectItem itemValue="PR" itemLabel="PR" />
+						<f:selectItem itemValue="SC" itemLabel="SC" />
+						<f:selectItem itemValue="RG" itemLabel="RG" />
+					</h:selectManyListbox>
+				</div>
+				<div>
+					<h:commandButton id="btnRetornar" name="btnRetornar"
+						action="#{exercicioController.retornar()}" value="Retornar"></h:commandButton>
+				</div>
+				<div>
+					<h:outputLabel value="Lista: #{exercicioController.getLista()}" />
+				</div>
+
+			</div>
+
+			<div class="separar">
+				<h3>Exercício 5</h3>
+				<div>
+					<h:selectOneRadio value="#{exercicioController.escolha}">
+						<f:selectItem itemValue="1" itemLabel="Sim" />
+						<f:selectItem itemValue="2" itemLabel="Não" />
+					</h:selectOneRadio>
+				</div>
+			</div>
+			<div>
+				<h3>Exercício 6</h3>
+				<div>
+					Valor:
+					<h:inputText id="valorBasico"
+						value="#{exercicioController.valorBasico}"></h:inputText>
+				</div>
+				<div>
+					<h:commandButton id="btnIr2" name="btnIr2"
+						action="#{exercicioController.formatar()}" value="Ir"></h:commandButton>
+				</div>
+				<div>
+					<h:outputLabel value="Valor Final: #{exercicioController.valor}" />
+				</div>
+			</div>
+
+		</div>
+	</h:form>
+</h:body>
+
+</html>
